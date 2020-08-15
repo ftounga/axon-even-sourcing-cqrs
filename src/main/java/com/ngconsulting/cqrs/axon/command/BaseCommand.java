@@ -1,6 +1,7 @@
 package com.ngconsulting.cqrs.axon.command;
 
-import org.axonframework.commandhandling.TargetAggregateIdentifier;
+
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 public class BaseCommand<T> {
 

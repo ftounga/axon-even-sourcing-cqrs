@@ -1,5 +1,6 @@
 package com.ngconsulting.cqrs.axon.controller;
 
+import com.ngconsulting.cqrs.axon.entity.AccountQueryEntity;
 import com.ngconsulting.cqrs.axon.service.AccountQueryService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,5 +24,10 @@ public class AccountQueryController {
     @GetMapping("/{accountNumber}/events")
     public List<Object> listEventsForAccount(@PathVariable(value = "accountNumber") String accountNumber){
         return accountQueryService.listEventsForAccount(accountNumber);
+    }
+
+    @GetMapping("/{accountNumber}")
+    public AccountQueryEntity getAccount(@PathVariable(value = "accountNumber") String accountNumber){
+        return accountQueryService.getAccount(accountNumber);
     }
 }
